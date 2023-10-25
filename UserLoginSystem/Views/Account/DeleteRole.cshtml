@@ -1,0 +1,37 @@
+﻿@model List<RoleViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DeleteRole</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Role Name</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.RoleName</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a asp-action="DeletedRole" asp-controller="Account" asp-route-id="@role.RoleId">Delete Role</a>
+                        </td>
+                    </tr>
+                }
+         
+        </tbody>
+    </table>
+</body>
+</html>

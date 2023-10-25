@@ -1,0 +1,40 @@
+﻿@model RoleViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateRole</title>
+    <style>
+        span{
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <a asp-action="Index" asp-controller="Dashboard">Go back</a>
+    <div>
+        <p style="color:green">
+            @ViewBag.Success
+        </p>
+    </div>
+    <form method="post">
+        <div asp-validation-summary="All" style="color:red"></div>
+        <div>
+            <label>Role Name</label>
+        </div>
+        <div>
+            <input asp-for="@Model.RoleName" />
+        </div>
+        <div>
+            <span asp-validation-for="@Model.RoleName" />
+        </div>
+        <br />
+        <button>Create Role</button>
+    </form>
+</body>
+</html>

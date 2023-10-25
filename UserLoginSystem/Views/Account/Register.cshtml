@@ -1,0 +1,68 @@
+﻿@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <style>
+        span{
+            color:red
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        
+        <div>
+            <label>EmailAdress</label>
+        </div>
+        <div>
+            <input asp-for="@Model.EmailAdress" />
+        </div>
+        <div>
+            <span asp-validation-for="@Model.EmailAdress" />
+        </div>
+        <div>
+            <label>UserName</label>
+        </div>
+        <div>
+            <input asp-for="@Model.UserName" />
+        </div>
+        <div>
+            <span asp-validation-for="@Model.UserName" />
+        </div>
+        <div>
+            <label>Password</label>
+        </div>
+        <div>
+            <input asp-for="@Model.Password" />
+        </div>
+        <div>
+            <span asp-validation-for="@Model.Password" />
+        </div>
+        <div>
+            <label>Confirm Password</label>
+        </div>
+        <div>
+            <input asp-for="@Model.ConfirmPassword" />
+        </div>
+        <div>
+            <span asp-validation-for="@Model.ConfirmPassword" />
+        </div>
+        <br />
+
+        <button>Send</button>
+    </form>
+    @Html.ValidationSummary()
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+

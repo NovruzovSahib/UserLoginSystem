@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="header">
+        @if (User.Identity!=null && User.Identity.IsAuthenticated)
+        {
+            <p>@User.Identity.Name</p>
+            <a asp-action="CreateRole" asp-controller="Account">
+                Create Role
+            </a>
+            <br />
+            <a asp-action="DeleteRole" asp-controller="Account">
+                Delete Role
+            </a>
+            <br />
+            <a asp-action="AddRoleToUser" asp-controller="Account">
+                Add Role To User
+            </a>
+            <form asp-action="Logout" asp-controller="Account" method="post">
+                <button>Logout</button>
+            </form>
+        }
+        <a asp-action="Login" asp-controller="Account">Login Page</a>
+    </div>
+
+
+</body>
+</html>

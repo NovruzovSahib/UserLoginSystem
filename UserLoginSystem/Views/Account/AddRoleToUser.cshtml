@@ -1,0 +1,52 @@
+﻿@model SetRoleToUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddRoleToUser</title>
+</head>
+<body>
+    <h1>
+        Set role to user
+    </h1>
+
+    <a asp-controller="Dashboard" asp-action="Index"> Go back</a>
+    <form method="post">
+        <div>
+            <label>
+                Select Role
+            </label>
+        </div>
+        <div>
+            <select asp-for="@Model.RoleId">
+                @foreach (var role in Model.RolerList)
+                {
+                    <option value="@role.Name">@role.Name</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label>
+                User Name
+            </label>
+        </div>
+        <div>
+            <select asp-for="@Model.UserId">
+                @foreach (var user in Model.UserList)
+                {
+                    <option value="@user.Id">@user.UserName</option>
+                }
+
+            </select>
+        </div>
+        <br />
+        <br />
+        <button>Set Role To User</button>
+    </form>
+</body>
+</html>
